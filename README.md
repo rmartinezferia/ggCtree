@@ -3,6 +3,8 @@
 ```{r}
 #install.packages(c("tidyverse","partykit","data.tree","igraph","caret","ggthemes"))
 
+source("ggCtreeReg.R")
+
 ```
 
 ## Example: 
@@ -24,12 +26,21 @@ plot(airct)
 ![Standard plot](ctree_plot.png)
 
 ```{r}
-# A better cTree regression plot
+# Point wisker plot is the default
 
-source("ggCtreeReg.R")
+ggCtreeReg(airct)
 
-ggCtreeReg(airct, "(ppb)")
 
 ```
 
-![ggCtree plot](ggctree_plot.png)
+![ggCtree plot](ggctree1.png)
+
+```{r}
+# Now also has density ridges 
+
+ggCtreeReg(airct, type = "ridges", ridges_bandwidth = 10)
+
+```
+
+![ggCtree plot](ggctree2.png)
+
