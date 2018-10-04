@@ -1,6 +1,6 @@
 # ggCtree: A better regression ctree plot using ggplot2 
 
-```{r}
+```r
 #install.packages(c("tidyverse","partykit","data.tree","igraph","caret","ggthemes"))
 
 source("ggCtreeReg.R")
@@ -9,7 +9,8 @@ source("ggCtreeReg.R")
 
 ## Example: 
 
-```{r}
+```r
+
 library(partykit)
 
 # air quality dataset
@@ -25,17 +26,19 @@ plot(airct)
 
 ![Standard plot](ctree_plot.png)
 
-```{r}
-# Point wisker plot is the default
+```r
+# Now lets try with the ggCtreeReg function
 
-ggCtreeReg(airct)
+ggCtreeReg(airct) 
+
+# Point wisker plot is the default
 
 
 ```
 
 ![ggCtree plot](ggctree1.png)
 
-```{r}
+```r
 # Now also has density ridges 
 
 ggCtreeReg(airct, type = "ridges", ridges_bandwidth = 10)
